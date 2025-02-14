@@ -56,36 +56,29 @@ function checkGuess() {
     submitButton.disabled = true;
     guessInput.disabled = true;
   }
-
   guessInput.value = '';
-
   resetButton.style.display = '';
 }
 
 function hideAllMessages() {
   for (let elementIndex = 0; elementIndex < messages.length; elementIndex++) {
     messages[elementIndex].style.display = 'none';
-
   }
-
 }
 
 function setup() {
   // Get random number
   targetNumber = getRandomNumber(1, 100);
   console.log(`target number: ${targetNumber}`);
-
   // Reset number of attempts
   maxNumberOfAttempts = 5;
   attempts = 0
-
   // Enable the input and submit button
   submitButton.disabled = false;
   guessInput.disabled = false;
 
   hideAllMessages();
   resetButton.style.display = 'none';
-
 }
 
 submitButton.addEventListener('click', checkGuess);
